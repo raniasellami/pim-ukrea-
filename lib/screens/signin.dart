@@ -53,7 +53,7 @@ class _SignInState extends State<SignIn> {
                             duration: Duration(seconds: 3),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 42,
                           ),
                           Image.asset("assets/images/sign_in.png"),
                         ],
