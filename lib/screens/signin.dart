@@ -6,6 +6,9 @@ import 'package:pim/util/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:lottie/lottie.dart';
+import 'package:http/http.dart' as http;
+import 'package:pim/util/api.dart';
+import 'dart:convert';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -130,13 +133,65 @@ class _SignInState extends State<SignIn> {
                             width: MediaQuery.of(context).size.width,
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Home()),
-                                );
                                 if (_keyForm.currentState!.validate())
-                                  _keyForm.currentState!.validate();
+                                  _keyForm.currentState!.save();
+
+                                Map<String, dynamic> userData = {
+                                  "email": _email,
+                                  "password": _password
+                                };
+
+                                Map<String, String> headers = {
+                                  "Content-Type":
+                                      "application/json; charset=UTF-8"
+                                };
+
+                                http
+                                    .post(Uri.http(api_key, "/usersPim/signin"),
+                                        headers: headers,
+                                        body: json.encode(userData))
+                                    .then((http.Response response) async {
+                                  if (response.statusCode == 201) {
+                                    Map<String, dynamic> userFromServer =
+                                        json.decode(response.body);
+
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const SignUp()),
+                                    );
+                                  } else if (response.statusCode == 401) {
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return const AlertDialog(
+                                            title: Text("Information"),
+                                            content:
+                                                Text("Password is incorrect"),
+                                          );
+                                        });
+                                  } else if (response.statusCode == 402) {
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return const AlertDialog(
+                                            title: Text("Information"),
+                                            content:
+                                                Text("Email doesn't exist"),
+                                          );
+                                        });
+                                  } else {
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return const AlertDialog(
+                                            title: Text("Information"),
+                                            content: Text(
+                                                "Une erreur s'est produite. Veuillez réessayer !"),
+                                          );
+                                        });
+                                  }
+                                });
                               },
                               child: Text(
                                 'Login',
@@ -160,7 +215,14 @@ class _SignInState extends State<SignIn> {
                                 children: [
                                   Text("Dont have an Account?"),
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUp()),
+                                      );
+                                    },
                                     child: const Text(
                                       'Sign Up',
                                       style: TextStyle(
