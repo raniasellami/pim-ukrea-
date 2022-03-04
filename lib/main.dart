@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: "/splashscreen",
+        initialRoute: "/editprofile",
         routes: {
           "/splashscreen": (BuildContext context) {
             return const SignIn();

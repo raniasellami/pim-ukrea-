@@ -61,10 +61,8 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(30)),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     prefixIcon: Icon(Icons.verified_user),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                     labelText: "Enter your first name",
                   ),
                   onSaved: (String? value) {
@@ -90,10 +88,8 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(30)),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     prefixIcon: Icon(Icons.verified_user),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                     labelText: "Enter your last name",
                   ),
                   onSaved: (String? value) {
@@ -120,10 +116,8 @@ class _SignUpState extends State<SignUp> {
                 child: TextFormField(
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     prefixIcon: Icon(Icons.phone),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                     labelText: "Enter your PhoneNumber",
                   ),
                   onSaved: (String? value) {
@@ -151,9 +145,6 @@ class _SignUpState extends State<SignUp> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                     labelText: "Enter your email",
                   ),
                   onSaved: (String? value) {
@@ -183,10 +174,8 @@ class _SignUpState extends State<SignUp> {
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     prefixIcon: Icon(Icons.password),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                     labelText: "Enter your password",
                   ),
                   onSaved: (String? value) {
@@ -212,7 +201,6 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(30)),
                 child: TextFormField(
                   keyboardType: TextInputType.streetAddress,
-                  obscureText: true,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.location_city),
                     border: OutlineInputBorder(
@@ -234,7 +222,6 @@ class _SignUpState extends State<SignUp> {
                     borderRadius: BorderRadius.circular(30)),
                 child: TextFormField(
                   keyboardType: TextInputType.datetime,
-                  obscureText: true,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.date_range),
                     border: OutlineInputBorder(
