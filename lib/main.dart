@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
 import 'package:pim/screens/signup.dart';
@@ -6,9 +7,20 @@ import 'package:pim/screens/signin.dart';
 import 'package:pim/screens/splashscreen.dart';
 import 'package:pim/util/user_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:pim/screens/settings.dart';
+import 'package:flutter_locales/flutter_locales.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:get/get.dart';
+import 'package:pim/screens/world_languages.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(GetMaterialApp(
+    home: MyApp(),
+    translations: WorldLanguage(), //Language class from world_languages.dart
+    locale: Locale('en', 'US'), // translations will be displayed in that locale
+    fallbackLocale: Locale('en',
+        'US'), // specify the fallback locale in case an invalid locale is selected.
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -25,15 +37,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
@@ -53,6 +56,9 @@ class MyApp extends StatelessWidget {
           },
           "/forgotpassword": (BuildContext context) {
             return const ForgotPassword();
+          },
+          "/settings": (BuildContext context) {
+            return const Settings();
           }
         },
       ),

@@ -9,6 +9,10 @@ import 'package:lottie/lottie.dart';
 import 'package:http/http.dart' as http;
 import 'package:pim/util/api.dart';
 import 'dart:convert';
+import 'package:pim/screens/world_languages.dart';
+import 'package:pim/main.dart';
+import 'package:get/get.dart';
+import 'package:pim/screens/settings.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -48,7 +52,7 @@ class _SignInState extends State<SignIn> {
                         children: [
                           FadeIn(
                             child: Text(
-                              'Welcome Back !',
+                              ("welcome".tr),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold),
@@ -75,10 +79,10 @@ class _SignInState extends State<SignIn> {
                                 borderRadius: BorderRadius.circular(30)),
                             child: TextFormField(
                               keyboardType: TextInputType.emailAddress,
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                 border: InputBorder.none,
                                 prefixIcon: Icon(Icons.email),
-                                labelText: "Email",
+                                labelText: ("email1".tr),
                               ),
                               onSaved: (String? value) {
                                 _email = value.toString();
@@ -109,7 +113,7 @@ class _SignInState extends State<SignIn> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 prefixIcon: Icon(Icons.password),
-                                labelText: "Password",
+                                labelText: ("password".tr),
                               ),
                               onSaved: (String? value) {
                                 _password = value.toString();
