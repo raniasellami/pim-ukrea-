@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:curved_bottom_navigation/curved_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:pim/screens/edit_profile.dart';
 
 import './search_page.dart';
 import './favorites_page.dart';
@@ -75,10 +76,16 @@ class _MainPageState extends State<MainPage> {
                   Icons.notifications,
                   color: Colors.white,
                 ),
-                Icon(
-                  Icons.settings,
-                  color: Colors.white,
-                ),
+                IconButton(onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const EditProfile()),
+                  );
+                }, icon: Icon(Icons.settings,
+                  color: Colors.white,))
+
+
+
               ],
             ),
           ),
