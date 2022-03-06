@@ -82,7 +82,7 @@ class _SignInState extends State<SignIn> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 prefixIcon: Icon(Icons.email),
-                                labelText: ("email1".tr),
+                                labelText: ("email".tr),
                               ),
                               onSaved: (String? value) {
                                 _email = value.toString();
@@ -198,7 +198,7 @@ class _SignInState extends State<SignIn> {
                                 });
                               },
                               child: Text(
-                                'Login',
+                                "Login".tr,
                                 style: TextStyle(fontSize: 28),
                               ),
                               style: ElevatedButton.styleFrom(
@@ -217,7 +217,7 @@ class _SignInState extends State<SignIn> {
                             children: [
                               Row(
                                 children: [
-                                  Text("Dont have an Account?"),
+                                  Text("account".tr),
                                   GestureDetector(
                                     onTap: () {
                                       Navigator.push(
@@ -227,8 +227,8 @@ class _SignInState extends State<SignIn> {
                                                 const SignUp()),
                                       );
                                     },
-                                    child: const Text(
-                                      'Sign Up',
+                                    child: Text(
+                                      "signup".tr,
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
@@ -246,8 +246,8 @@ class _SignInState extends State<SignIn> {
                                               const ForgotPassword()),
                                     );
                                   },
-                                  child: const Text(
-                                    'Forgot Password',
+                                  child: Text(
+                                    'ForgotPassword'.tr,
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,

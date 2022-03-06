@@ -5,6 +5,7 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:pim/util/api.dart';
 import 'dart:convert';
+import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class _SignUpState extends State<SignUp> {
             children: [
               FadeIn(
                 child: Text(
-                  'Register With Us!',
+                  'registerwithus'.tr,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
@@ -46,7 +47,7 @@ class _SignUpState extends State<SignUp> {
               ),
               FadeIn(
                 child: Text(
-                  'Your Information is safe with us',
+                  ("saveinfo".tr),
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 19),
                 ),
@@ -63,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.verified_user),
-                    labelText: "Enter your first name",
+                    labelText: "enterfirstname".tr,
                   ),
                   onSaved: (String? value) {
                     _firstname = value.toString();
@@ -90,7 +91,7 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.verified_user),
-                    labelText: "Enter your last name",
+                    labelText: "lastname".tr,
                   ),
                   onSaved: (String? value) {
                     _lastname = value.toString();
@@ -118,7 +119,7 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.phone),
-                    labelText: "Enter your PhoneNumber",
+                    labelText: "phone".tr,
                   ),
                   onSaved: (String? value) {
                     _phonenumber = value.toString();
@@ -145,7 +146,7 @@ class _SignUpState extends State<SignUp> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.email),
-                    labelText: "Enter your email",
+                    labelText: "enteremail".tr,
                   ),
                   onSaved: (String? value) {
                     _email = value.toString();
@@ -176,7 +177,7 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.password),
-                    labelText: "Enter your password",
+                    labelText: "enterpassword".tr,
                   ),
                   onSaved: (String? value) {
                     _password = value.toString();
@@ -206,7 +207,7 @@ class _SignUpState extends State<SignUp> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
-                    labelText: "Enter your adress",
+                    labelText: "enteradress".tr,
                   ),
                   onSaved: (String? value) {
                     _adress = value.toString();
@@ -227,7 +228,7 @@ class _SignUpState extends State<SignUp> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
-                    labelText: "Enter your Birthday",
+                    labelText: "enterbirthday".tr,
                   ),
                   onSaved: (String? value) {
                     _datedenaissance = value.toString();
@@ -291,8 +292,8 @@ class _SignUpState extends State<SignUp> {
                       }
                     });
                   },
-                  child: const Text(
-                    'signup',
+                  child: Text(
+                    'signupp'.tr,
                     style: TextStyle(fontSize: 28),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -314,7 +315,7 @@ class _SignUpState extends State<SignUp> {
                       );
                     },
                     child: Text(
-                      'Already have an account? Sign In',
+                      'alreadyhave'.tr,
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
