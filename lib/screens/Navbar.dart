@@ -56,6 +56,12 @@ class NavBar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
+            leading: Icon(Icons.map),
+            title: Text('About us'),
+            onTap: () => null,
+          ),
+          Divider(),
+          ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Exit'),
             onTap: () => null,

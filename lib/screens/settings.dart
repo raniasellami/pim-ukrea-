@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/main.dart';
 import 'package:pim/screens/signin.dart';
+import 'package:pim/screens/signup.dart';
 import 'world_languages.dart';
 
 class Settings extends StatefulWidget {
@@ -42,7 +43,7 @@ class _SettingsState extends State<Settings> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
+                MaterialPageRoute(builder: (context) => const SignUp()),
               );
             },
           ),
