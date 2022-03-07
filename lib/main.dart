@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pim/screens/aboutus.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
 import 'package:pim/screens/signup.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: "/editprofile",
+        initialRoute: "/aboutus",
         routes: {
           "/splashscreen": (BuildContext context) {
             return const SignIn();
@@ -59,6 +60,9 @@ class MyApp extends StatelessWidget {
           },
           "/settings": (BuildContext context) {
             return const Settings();
+          },
+          "/aboutus": (BuildContext context) {
+            return const AboutUs();
           }
         },
       ),
